@@ -1,18 +1,18 @@
 <?php
 abstract class Easy extends Difficulty{
-    private $type_difficult;
-    private $type_distance;
     private $endurance;
     private $protection;
     private $speed;
+    private $weapon;
+    private $shield;
 
-    public function __construct($type_difficult,$type_distance , $endurance, $protection, $speed)
+    public function __construct($endurance, $protection, $speed, $weapon, $shield)
     {
-        $this->type_difficult = $type_difficult;
-        $this->type_distance = $type_distance;
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
+        $this->weapon = $weapon;
+        $this->shield = $shield;
     }
 
 
@@ -21,10 +21,6 @@ abstract class Easy extends Difficulty{
         $this->endurance = $endurance;
     }
 
-    public function setTypeDistance($type_distance)
-    {
-        $this->type_distance = $type_distance;
-    }
 
     public function setProtection($protection)
     {
@@ -36,10 +32,6 @@ abstract class Easy extends Difficulty{
         return $this->endurance;
     }
 
-    public function getTypeDifficult()
-    {
-        return $this->type_difficult;
-    }
     public function getProtection()
     {
         return $this->protection;

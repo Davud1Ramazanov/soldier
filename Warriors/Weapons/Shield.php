@@ -7,9 +7,9 @@ abstract class Shield extends Weapons{
 
     public function __construct()
     {
-        $this->protection = 73;
-        $this->visibility = 35;
-        $this->durability = 42;
+        $this->protection = 43;
+        $this->visibility = 34;
+        $this->durability = 39;
     }
 }
 ?>

@@ -3,18 +3,23 @@
 abstract class Foot extends Warrior
 {
     private $name;
-    private $endurance;
-    private $protection;
-    private $speed;
+    private $endurance; //выносливость
+    private $protection; //защита
+    private $speed; //скорость
+    private $weapon;
+    private $armor;
+    private $shield;
 
-    public function __construct($name, $endurance, $protection, $speed)
+    public function __construct($name, $weapon, $armor, $shield = null)
     {
         $this->name = $name;
-        $this->endurance = $endurance;
-        $this->protection = $protection;
-        $this->speed = $speed;
+        $this->endurance = 100;
+        $this->protection = 100;
+        $this->speed = 10;
+        $this->weapon = $weapon;
+        $this->armor = $armor;
+        $this->shield = $shield;
     }
-
 
     public function setEndurance($endurance)
     {

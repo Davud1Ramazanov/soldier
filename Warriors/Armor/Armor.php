@@ -1,28 +1,14 @@
 <?php
-
-class Difficult
-{
+abstract class Armor{
+    private $protection;
     private $endurance;
     private $weight;
-    private $protection;
-    private $speed;
-    private $weapon;
-    private $shield;
 
-
-    public function __construct($weight, $endurance, $protection, $speed, $weapon, $shield)
+    protected function __construct($protection, $endurance, $weight)
     {
-        $this->weight = $weight;
-        $this->endurance = $endurance;
         $this->protection = $protection;
-        $this->speed = $speed;
-        $this->weapon = $weapon;
-        $this->shield = $shield;
-    }
-
-    public function setEndurance($endurance)
-    {
         $this->endurance = $endurance;
+        $this->weight = $weight;
     }
 
     public function setProtection($protection)
@@ -30,9 +16,9 @@ class Difficult
         $this->protection = $protection;
     }
 
-    public function setSpeed($speed)
+    public function setEndurance($endurance)
     {
-        $this->speed = $speed;
+        $this->endurance = $endurance;
     }
 
     public function setWeight($weight)
@@ -45,15 +31,9 @@ class Difficult
         return $this->protection;
     }
 
-
     public function getEndurance()
     {
         return $this->endurance;
-    }
-
-    public function getSpeed()
-    {
-        return $this->speed;
     }
 
     public function getWeight()
@@ -61,5 +41,4 @@ class Difficult
         return $this->weight;
     }
 }
-
 ?>

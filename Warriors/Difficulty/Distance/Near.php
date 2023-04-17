@@ -1,26 +1,18 @@
 <?php
 abstract class Near extends Easy{
-    private $type_difficult;
-    private $type_distance;
     private $endurance;
     private $protection;
     private $speed;
-    private $sword;
+    private $weapon;
     private $shield;
-    private $saber;
-    private $spear;
 
-    public function __construct($type_difficult,$type_distance , $endurance, $protection, $speed)
+    public function __construct($endurance, $protection, $speed, $weapon, $shield)
     {
-        $this->type_difficult = $type_difficult;
-        $this->type_distance = $type_distance;
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
-        $this->sword = new Sword();
-        $this->shield = new Shield();
-        $this->saber = new Saber();
-        $this->spear = new Spear();
+        $this->weapon = $weapon;
+        $this->shield = $shield;
     }
 
 
@@ -29,10 +21,6 @@ abstract class Near extends Easy{
         $this->endurance = $endurance;
     }
 
-    public function setTypeDistance($type_distance)
-    {
-        $this->type_distance = $type_distance;
-    }
 
     public function setProtection($protection)
     {
@@ -44,10 +32,6 @@ abstract class Near extends Easy{
         return $this->endurance;
     }
 
-    public function getTypeDifficult()
-    {
-        return $this->type_difficult;
-    }
     public function getProtection()
     {
         return $this->protection;

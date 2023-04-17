@@ -1,9 +1,7 @@
 <?php
 //Лук
-abstract class Bow extends Weapons{
-
-    private $endurance;
-    private $power;
+abstract class Bow extends Weapons
+{
     private $range;
 
     public function __construct()

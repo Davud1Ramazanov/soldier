@@ -1,8 +1,6 @@
 <?php
-abstract class Axe extends Weapons {
-    private $endurance;
-    private $power;
-
+abstract class Axe extends Weapons
+{
     public function __construct()
     {
         $this->endurance = 87;

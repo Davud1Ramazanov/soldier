@@ -1,22 +1,26 @@
 <?php
 
-class Mounted extends Warrior
+abstract class Mounted extends Warrior
 {
     private $name;
     private $endurance; //выносливость
     private $protection; //защита
     private $speed; //скорость
     private $weapon;
+    private $armor;
     private $myHourse;
+    private $shield;
 
-    public function __construct()
+    public function __construct($name, $weapon, $armor, $myHourse = null, $shield = null)
     {
-        $this->name = 'Vasiliy';
+        $this->name = $name;
         $this->endurance = 100;
         $this->protection = 100;
         $this->speed = 10;
-        $this->weapon = new Peak();
+        $this->weapon = $weapon;
+        $this->armor = $armor;
         $this->myHourse = new Horse();
+        $this->shield = $shield;
     }
 
 

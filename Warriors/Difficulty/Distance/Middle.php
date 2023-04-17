@@ -1,31 +1,22 @@
 <?php
 abstract class Middle extends Easy{
-    private $type_difficult;
-    private $type_distance;
     private $endurance;
     private $protection;
     private $speed;
-    private $bow;
+    private $weapon;
 
-    public function __construct($type_difficult,$type_distance , $endurance, $protection, $speed)
+    public function __construct($endurance, $protection, $speed, $weapon)
     {
-        $this->type_difficult = $type_difficult;
-        $this->type_distance = $type_distance;
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
-        $this->bow = new Bow();
+        $this->weapon = $weapon;
     }
 
 
     public function setEndurance($endurance)
     {
         $this->endurance = $endurance;
-    }
-
-    public function setTypeDistance($type_distance)
-    {
-        $this->type_distance = $type_distance;
     }
 
     public function setProtection($protection)
@@ -38,10 +29,6 @@ abstract class Middle extends Easy{
         return $this->endurance;
     }
 
-    public function getTypeDifficult()
-    {
-        return $this->type_difficult;
-    }
     public function getProtection()
     {
         return $this->protection;

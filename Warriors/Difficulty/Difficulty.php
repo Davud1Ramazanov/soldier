@@ -1,21 +1,14 @@
 <?php
 abstract class Difficulty extends Foot{
-    private $type_difficult;
     private $endurance;
     private $protection;
     private $speed;
 
-    public function __construct($type_difficult, $endurance, $protection, $speed)
+    public function __construct($endurance, $protection, $speed)
     {
-        $this->type_difficult = $type_difficult;
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
-    }
-
-    public function setTypeDifficult($type_difficult)
-    {
-        $this->type_difficult = $type_difficult;
     }
 
     public function setEndurance($endurance)
@@ -36,11 +29,6 @@ abstract class Difficulty extends Foot{
     public function getProtection()
     {
         return $this->protection;
-    }
-
-    public function getTypeDifficult()
-    {
-        return $this->type_difficult;
     }
 
     public function getEndurance()
