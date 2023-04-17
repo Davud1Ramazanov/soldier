@@ -2,13 +2,15 @@
 abstract class Commander extends Warrior{
     private $rank;
     private $specialization;
-    private $achivments;
+    private $reputation;
+    private $achivments_command;
 
-    public function __construct($rank, $specialization)
+    public function __construct($rank, $specialization, $reputation)
     {
         $this->rank = $rank;
         $this->specialization = $specialization;
-        $this->achivments = new Achivments();
+        $this->reputation = $reputation;
+        $this->achivments_command = new AchivmentsCommander();
     }
 
     public function setRank($rank)
@@ -21,6 +23,11 @@ abstract class Commander extends Warrior{
         $this->specialization = $specialization;
     }
 
+    public function setReputation($reputation)
+    {
+        $this->reputation = $reputation;
+    }
+
     public function getSpecialization()
     {
         return $this->specialization;
@@ -29,6 +36,11 @@ abstract class Commander extends Warrior{
     public function getRank()
     {
         return $this->rank;
+    }
+
+    public function getReputation()
+    {
+        return $this->reputation;
     }
 }
 ?>
