@@ -6,13 +6,15 @@ abstract class Warrior
     private $endurance;
     private $protection;
     private $speed;
+    private $weapon;
 
-    public function __construct($name, $endurance, $protection, $speed)
+    protected function __construct($name, $endurance, $protection, $speed, $weapon)
     {
         $this->name = $name;
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
+        $this->weapon = $weapon;
     }
 
     public function setEndurance($endurance)

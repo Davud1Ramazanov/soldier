@@ -1,18 +1,26 @@
 <?php
-abstract class Difficulty extends Foot{
+abstract class Near extends Easy{
     private $type_difficult;
+    private $type_distance;
     private $endurance;
     private $protection;
     private $speed;
-    private $hp;
+    private $sword;
+    private $shield;
+    private $saber;
+    private $spear;
 
-    public function __construct($type_difficult, $endurance, $protection, $speed, $hp)
+    public function __construct($type_difficult,$type_distance , $endurance, $protection, $speed)
     {
         $this->type_difficult = $type_difficult;
+        $this->type_distance = $type_distance;
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
-        $this->hp = $hp;
+        $this->sword = new Sword();
+        $this->shield = new Shield();
+        $this->saber = new Saber();
+        $this->spear = new Spear();
     }
 
 
@@ -21,14 +29,9 @@ abstract class Difficulty extends Foot{
         $this->endurance = $endurance;
     }
 
-    public function setHp($hp)
+    public function setTypeDistance($type_distance)
     {
-        $this->hp = $hp;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
+        $this->type_distance = $type_distance;
     }
 
     public function setProtection($protection)
@@ -41,16 +44,10 @@ abstract class Difficulty extends Foot{
         return $this->endurance;
     }
 
-    public function getHp()
+    public function getTypeDifficult()
     {
-        return $this->hp;
+        return $this->type_difficult;
     }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
     public function getProtection()
     {
         return $this->protection;

@@ -6,14 +6,16 @@ class Mounted extends Warrior
     private $endurance; //выносливость
     private $protection; //защита
     private $speed; //скорость
+    private $weapon;
     private $myHourse;
 
-    public function __construct($name, $endurance, $protection, $speed)
+    public function __construct()
     {
-        $this->name = $name;
-        $this->endurance = $endurance;
-        $this->protection = $protection;
-        $this->speed = $speed;
+        $this->name = 'Vasiliy';
+        $this->endurance = 100;
+        $this->protection = 100;
+        $this->speed = 10;
+        $this->weapon = new Peak();
         $this->myHourse = new Horse();
     }
 
