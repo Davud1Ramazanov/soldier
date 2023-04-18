@@ -1,5 +1,5 @@
 <?php
-class AchivmentsWarrior
+class AchivmentsWarrior extends Warrior
 {
     private $bonus_endurance;
     private $bonus_protection;
