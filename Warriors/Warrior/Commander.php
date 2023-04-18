@@ -42,5 +42,15 @@ abstract class Commander extends Warrior{
     {
         return $this->reputation;
     }
+
+    public function upRank($amount){
+        $this->rank += $amount;
+        $this->achivments_command = new AchivmentsCommander($this->rank, $this->reputation);
+    }
+
+    public function upReputatuion($amount){
+        $this->reputation += $amount;
+        $this->achivments_command = new AchivmentsCommander($this->rank, $this->reputation);
+    }
 }
 ?>

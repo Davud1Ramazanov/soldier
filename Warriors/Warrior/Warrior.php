@@ -7,6 +7,7 @@ abstract class Warrior
     private $protection;
     private $speed;
     private $weapon;
+    private $achivments_warrior;
 
     protected function __construct($name, $endurance, $protection, $speed, $weapon)
     {
@@ -15,6 +16,7 @@ abstract class Warrior
         $this->protection = $protection;
         $this->speed = $speed;
         $this->weapon = $weapon;
+        $this->achivments_warrior = new AchivmentsWarrior();
     }
 
     public function setEndurance($endurance)
@@ -48,8 +50,22 @@ abstract class Warrior
         return $this->protection;
     }
 
-    public abstract function attack($endurance, $protection, $speed);
+    public function upEndurance($amount)
+    {
+        $this->endurance = $amount;
+        $this->achivments_warrior = new AchivmentsWarrior($this->endurance, $this->protection, $this->speed);
+    }
 
-    public abstract function defend($endurance, $protection);
+    public function upProtection($amount)
+    {
+        $this->protection = $amount;
+        $this->achivments_warrior = new AchivmentsWarrior($this->endurance, $this->protection, $this->speed);
+    }
+
+    public function upSpeed($amount)
+    {
+        $this->speed = $amount;
+        $this->achivments_warrior = new AchivmentsWarrior($this->endurance, $this->protection, $this->speed);
+    }
 }
 ?>

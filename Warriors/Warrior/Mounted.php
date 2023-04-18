@@ -53,37 +53,6 @@ abstract class Mounted extends Warrior
     {
         return $this->protection;
     }
-
-    public function attack($endurance, $protection, $speed)
-    {
-        if ($endurance < 20) {
-            return "I'm feeling weak, I need to rest before attacking!";
-        }
-        $attackPower = $this->myHourse->getForce() * $this->getEndurance() / 100;
-        $accuracy = $this->getSpeed() * 0.5 + $this->myHourse->getSpeed() * 0.5;
-        $hitChance = rand(1, 100);
-        if ($hitChance <= $accuracy) {
-            return "The attack hits the target with a power of $attackPower!";
-        } else {
-            return "The attack misses the target!";
-        }
-    }
-
-    public function defend($endurance, $protection)
-    {
-        if ($endurance < 20) {
-            return "I'm feeling weak, I need to rest!";
-        } else {
-            $defenseScore = $endurance + $protection;
-            $opponentAttackScore = rand(30, 100);
-            if ($defenseScore > $opponentAttackScore) {
-                return "I successfully defended the attack!";
-            } else {
-                return "I was unable to defend the attack.";
-            }
-        }
-    }
-
 }
 
 ?>
