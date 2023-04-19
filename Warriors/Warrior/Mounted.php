@@ -1,23 +1,27 @@
 <?php
 
-abstract class Mounted extends Warrior
+class Mounted extends Warrior
 {
     private $name;
     private $endurance; //выносливость
     private $protection; //защита
     private $speed; //скорость
-    private $weapon;
+    public $bow;
+    public $pike;
+    public $sword;
     private $armor;
     private $myHourse;
     private $shield;
 
-    public function __construct($name, $weapon, $armor, $myHourse = null, $shield = null)
+    public function __construct($name, $armor, $myHourse = null, $shield = null)
     {
         $this->name = $name;
         $this->endurance = 100;
         $this->protection = 100;
         $this->speed = 10;
-        $this->weapon = $weapon;
+        $this->bow = new Bow();
+        $this->pike = new Pike();
+        $this->sword = new Sword();
         $this->armor = $armor;
         $this->myHourse = new Horse();
         $this->shield = $shield;
@@ -52,6 +56,21 @@ abstract class Mounted extends Warrior
     public function getProtection()
     {
         return $this->protection;
+    }
+
+    public function getSword()
+    {
+        return $this->sword;
+    }
+
+    public function getBow()
+    {
+        return $this->bow;
+    }
+
+    public function getPike()
+    {
+        return $this->pike;
     }
 }
 

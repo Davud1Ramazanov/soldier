@@ -1,24 +1,24 @@
 <?php
 
-abstract class Commander extends Warrior
+class Commander extends Warrior
 {
     private $name;
     private $rank;
     private $reputation;
     private $achivments_command;
-    private $weapon;
+    private $sword;
     private $endurance;
     private $protection;
     private $speed;
 
 
-    public function __construct($name, $rank, $reputation, $weapon, $endurance, $protection, $speed)
+    public function __construct($name, $rank, $reputation, $endurance, $protection, $speed)
     {
         $this->name = $name;
         $this->rank = $rank;
         $this->reputation = $reputation;
         $this->achivments_command = array(new AchivmentsWarrior());
-        $this->weapon = $weapon;
+        $this->sword = new Sword();
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
@@ -72,6 +72,11 @@ abstract class Commander extends Warrior
     public function getSpeed()
     {
         return $this->speed;
+    }
+
+    public function getSword()
+    {
+        return $this->sword;
     }
 }
 

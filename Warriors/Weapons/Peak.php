@@ -1,5 +1,6 @@
 <?php
-abstract class Peak extends Weapons
+
+class Peak extends Weapons
 {
     public function __construct()
     {
@@ -8,4 +9,5 @@ abstract class Peak extends Weapons
         $this->power = 45;
     }
 }
+
 ?>

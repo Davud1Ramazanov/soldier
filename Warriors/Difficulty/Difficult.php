@@ -1,6 +1,6 @@
 <?php
 
-class Difficult
+class Difficult extends Difficulty
 {
     private $endurance;
     private $weight;

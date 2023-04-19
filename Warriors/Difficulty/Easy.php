@@ -3,7 +3,10 @@ abstract class Easy extends Difficulty{
     private $endurance;
     private $protection;
     private $speed;
-    private $weapon;
+    private $bow;
+    private $sword;
+    private $spear;
+    private $saber;
     private $shield;
 
     public function __construct($endurance, $protection, $speed, $weapon, $shield)
@@ -11,7 +14,9 @@ abstract class Easy extends Difficulty{
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
-        $this->weapon = $weapon;
+        $this->sword = new Sword();
+        $this->spear = new Spear();
+        $this->saber = new Saber();
         $this->shield = $shield;
     }
 
@@ -35,6 +40,21 @@ abstract class Easy extends Difficulty{
     public function getProtection()
     {
         return $this->protection;
+    }
+
+    public function getSpear()
+    {
+        return $this->spear;
+    }
+
+    public function getSaber()
+    {
+        return $this->saber;
+    }
+
+    public function getSword()
+    {
+        return $this->sword;
     }
 }
 ?>

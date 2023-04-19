@@ -1,16 +1,18 @@
 <?php
-abstract class Middle extends Easy{
+
+class Middle extends Easy
+{
     private $endurance;
     private $protection;
     private $speed;
-    private $weapon;
+    private $bow;
 
-    public function __construct($endurance, $protection, $speed, $weapon)
+    public function __construct($endurance, $protection, $speed)
     {
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
-        $this->weapon = $weapon;
+        $this->bow = new Bow();
     }
 
 
@@ -33,5 +35,11 @@ abstract class Middle extends Easy{
     {
         return $this->protection;
     }
+
+    public function getBow()
+    {
+        return $this->bow;
+    }
 }
+
 ?>

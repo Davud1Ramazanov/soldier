@@ -1,6 +1,7 @@
 <?php
+
 //Лук
-abstract class Bow extends Weapons
+class Bow extends Weapons
 {
     private $range;
 
@@ -12,4 +13,5 @@ abstract class Bow extends Weapons
         $this->range = 50;
     }
 }
+
 ?>

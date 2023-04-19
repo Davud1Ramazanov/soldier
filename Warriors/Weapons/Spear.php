@@ -1,6 +1,7 @@
 <?php
+
 //Копье
-abstract class Spear extends Weapons
+class Spear extends Weapons
 {
     public function __construct()
     {

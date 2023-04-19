@@ -1,22 +1,22 @@
 <?php
 
-class Foot extends Warrior
+abstract class Foot extends Warrior
 {
     private $name;
     private $endurance; //выносливость
     private $protection; //защита
     private $speed; //скорость
-    private $weapon;
+    private $sword;
     private $armor;
     private $shield;
 
-    public function __construct($name, $weapon, $armor, $shield = null)
+    public function __construct($name, $armor, $shield = null)
     {
         $this->name = $name;
         $this->endurance = 100;
         $this->protection = 100;
         $this->speed = 10;
-        $this->weapon = $weapon;
+        $this->sword = new Sword();
         $this->armor = $armor;
         $this->shield = $shield;
     }
@@ -49,6 +49,11 @@ class Foot extends Warrior
     public function getProtection()
     {
         return $this->protection;
+    }
+
+    public function getSword()
+    {
+        return $this->sword;
     }
 }
 

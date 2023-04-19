@@ -1,6 +1,8 @@
 <?php
+
 // Сабля
-abstract class Saber extends Weapons {
+class Saber extends Weapons
+{
     public function __construct()
     {
         $this->type = 'saber';
@@ -8,4 +10,5 @@ abstract class Saber extends Weapons {
         $this->power = 58;
     }
 }
+
 ?>

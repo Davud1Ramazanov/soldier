@@ -1,6 +1,8 @@
 <?php
+
 //Щит
-abstract class Shield extends Weapons{
+class Shield extends Weapons
+{
     private $protection;
     private $visibility;
     private $durability;
@@ -12,4 +14,5 @@ abstract class Shield extends Weapons{
         $this->durability = 39;
     }
 }
+
 ?>
