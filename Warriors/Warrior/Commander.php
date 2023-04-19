@@ -4,19 +4,18 @@ abstract class Commander extends Warrior
 {
     private $name;
     private $rank;
-    private $specialization;
     private $reputation;
+    private $achivments_command;
     private $weapon;
     private $endurance;
     private $protection;
     private $speed;
 
 
-    public function __construct($name, $rank, $specialization, $reputation, $weapon, $endurance, $protection, $speed)
+    public function __construct($name, $rank, $reputation, $weapon, $endurance, $protection, $speed)
     {
         $this->name = $name;
         $this->rank = $rank;
-        $this->specialization = $specialization;
         $this->reputation = $reputation;
         $this->achivments_command = array(new AchivmentsWarrior());
         $this->weapon = $weapon;
@@ -30,19 +29,9 @@ abstract class Commander extends Warrior
         $this->rank = $rank;
     }
 
-    public function setSpecialization($specialization)
-    {
-        $this->specialization = $specialization;
-    }
-
     public function setReputation($reputation)
     {
         $this->reputation = $reputation;
-    }
-
-    public function getSpecialization()
-    {
-        return $this->specialization;
     }
 
     public function setEndurance($endurance)

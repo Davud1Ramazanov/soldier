@@ -36,6 +36,11 @@ class Squad
         return $this->name;
     }
 
+    public function getWarrios()
+    {
+        return $this->warrios;
+    }
+
     public function delWarrios($warrior)
     {
         array_shift($this->warrios, $warrior);

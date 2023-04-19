@@ -1,6 +1,6 @@
 <?php
 
-abstract class Foot extends Warrior
+class Foot extends Warrior
 {
     private $name;
     private $endurance; //выносливость

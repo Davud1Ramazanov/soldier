@@ -7,15 +7,17 @@ abstract class Warrior
     private $protection;
     private $speed;
     private $weapon;
+    private $armor;
     private $achivments_warrior;
 
-    protected function __construct($name, $endurance, $protection, $speed, $weapon)
+    protected function __construct($name, $endurance, $protection, $speed, $weapon, $armor)
     {
         $this->name = $name;
         $this->endurance = $endurance;
         $this->protection = $protection;
         $this->speed = $speed;
         $this->weapon = $weapon;
+        $this->armor = $armor;
         $this->achivments_warrior = new AchivmentsWarrior();
     }
 
@@ -50,22 +52,18 @@ abstract class Warrior
         return $this->protection;
     }
 
-    public function upEndurance($amount)
-    {
-        $this->endurance = $amount;
-        $this->achivments_warrior = new AchivmentsWarrior($this->endurance, $this->protection, $this->speed);
+    public function attack($weapon) {
+        echo "Hit using: {$weapon->getType()}";
+        $this->endurance= $this->endurance-($weapon->getPower())+($this->armor->getProtection());
+        echo "The {$this->name} has endurance: { $this->endurance}";
     }
 
-    public function upProtection($amount)
-    {
-        $this->protection = $amount;
-        $this->achivments_warrior = new AchivmentsWarrior($this->endurance, $this->protection, $this->speed);
+    public function defend($weapon) {
+        echo "Defense with weapons: {$weapon->getType()}";
     }
 
-    public function upSpeed($amount)
-    {
-        $this->speed = $amount;
-        $this->achivments_warrior = new AchivmentsWarrior($this->endurance, $this->protection, $this->speed);
+    public function movement() {
+        echo "A {$this->name} moves at the speed of: {$this->speed}";
     }
 }
 ?>

@@ -6,6 +6,7 @@ abstract class Bow extends Weapons
 
     public function __construct()
     {
+        $this->type = 'bow';
         $this->endurance = 100;
         $this->power = 85;
         $this->range = 50;
